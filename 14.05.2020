@@ -1,0 +1,26 @@
+#include <fstream>
+
+int main ()
+{
+   using namespace std;
+   int j,i;
+   string haslo;
+   ifstream dane;
+   ofstream odpowiedz;
+   dane.open("dane.txt");
+   odpowiedz.open("zadanie4.txt");
+
+   while (dane.good())
+   {
+     bool palindrom = true;
+     dane >> haslo;
+     for (i=0, j=haslo.size()-1; i<haslo.size()/2; i++, j--)
+     {
+       if (haslo[i]!=haslo[j])
+       palindrom = false;
+     }
+     if(palindrom)
+     odpowiedz<<haslo<<endl;
+   }
+}
+}
