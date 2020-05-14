@@ -3,20 +3,20 @@
 int main ()
 {
    using namespace std;
-   int j,i;
+   int a,b;
    string haslo;
    ifstream dane;
    ofstream odpowiedz;
    dane.open("dane.txt");
-   odpowiedz.open("zadanie4.txt");
+   odpowiedz.open("zadanie.txt");
 
    while (dane.good())
    {
      bool palindrom = true;
      dane >> haslo;
-     for (i=0, j=haslo.size()-1; i<haslo.size()/2; i++, j--)
+     for (b=0, a=haslo.size()-1; b<haslo.size()/2; b++, a--)
      {
-       if (haslo[i]!=haslo[j])
+       if (haslo[b]!=haslo[a])
        palindrom = false;
      }
      if(palindrom)
